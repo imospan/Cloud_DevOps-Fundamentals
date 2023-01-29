@@ -30,3 +30,9 @@ Task C: Create a data backup script that takes the following data as parameters:
 1. Path to the syncing directory.
 2. The path to the directory where the copies of the files will be stored.
 In case of adding new or deleting old files, the script must add a corresponding entry to the log file indicating the time, type of operation and file name. [The command to run the script must be added to crontab with a run frequency of one minute]
+
+[Script](https://github.com/imospan/Cloud_DevOps-Fundamentals/blob/main/Bash/C/task_c.sh) and screen of test run:\
+![screen_backup](https://user-images.githubusercontent.com/106439773/215334339-9e66732c-4c2e-4a87-adf7-66ed86fbca62.png)
+
+To add this task to crontab i used ```sudo nano /etc/crontab``` and edited cron like on a screen:
+![cron](https://user-images.githubusercontent.com/106439773/215334419-87166f32-7bf2-4317-9168-323da7dc7402.png)
