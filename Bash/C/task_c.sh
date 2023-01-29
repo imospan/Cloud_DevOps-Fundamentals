@@ -5,7 +5,7 @@ echo "Timestamp is $(date +"%D %T")" >> $LOG
 }
 
 #Checking for correct arguments
-if [ ! -d "$1" ] || [ ! -d "$2" ]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
 	echo "You need to pass two parameters"
 	echo "1. Path to the syncing  directory."
 	echo "2. The path to the directory where the copies of the files will be stored."
