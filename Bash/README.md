@@ -10,7 +10,7 @@ The code that performs the functionality of each of the subtasks must be placed 
 [Script](https://github.com/imospan/Cloud_DevOps-Fundamentals/blob/main/Bash/A/task_a.sh) and screenshot:\
 ![screen_a](https://user-images.githubusercontent.com/106439773/215318364-11a0793a-e43e-48b2-8cc4-a15e4daff8bf.png)
 
-Task B: Using Apache log example create a script to answer the following questions:
+Task B: Using Apache [log example](https://github.com/imospan/Cloud_DevOps-Fundamentals/blob/main/Bash/B/example_log.log) create a script to answer the following questions:
 ----------------
 1. From which ip were the most requests?
 2. What is the most requested page?
