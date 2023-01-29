@@ -1,5 +1,9 @@
 #!/bin/bash
 
+timestamp () {
+echo "Timestamp is $(date +"%D %T")" >> $LOG
+}
+
 #Checking for correct arguments
 if [ ! -d "$1" ] || [ ! -d "$2" ]; then
 	echo "You need to pass two parameters"
@@ -18,10 +22,11 @@ then
 	echo "Directory already exists" >> $LOG
 else
 	echo "Creating directory" >> $LOG
+	timestamp
 fi
 
 #Copying files and adding results to the log
 echo "Copying Files" >> $LOG
 cp -v $SOURCE/* $DESTINATION >> $LOG
 echo "Finished Copying Files" >> $LOG
-echo "Timestamp is $(date +"%D %T")" >> $LOG
+timestamp
