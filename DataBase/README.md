@@ -40,10 +40,14 @@ DDL and DML command could be seen on previous steps, DCL commands shown on the n
 Part 2
 --------------------
 10.Make backup of your database.
+![db8](https://user-images.githubusercontent.com/106439773/215462616-aa9956ba-0aec-4941-ad5e-1f8bbcd525a7.png)
 
 11.Delete the table and/or part of the data in the table.
+![db9](https://user-images.githubusercontent.com/106439773/215462633-ba21cb2f-2449-4340-8b43-dba63f804072.png)
 
 12.Restore your database.
+![db10](https://user-images.githubusercontent.com/106439773/215462643-49468e7e-ba36-46df-b15a-dfedee9aed34.png)
+![db11](https://user-images.githubusercontent.com/106439773/215462658-59fa51df-bfe4-4139-b826-a55ef41799e5.png)
 
 13.Transfer your local database to RDS AWS.
 
