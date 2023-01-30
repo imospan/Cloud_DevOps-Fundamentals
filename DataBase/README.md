@@ -20,7 +20,11 @@ I've created a small sample DB with some Lineage2 professions, their RPG classes
 
 4. Create a database on the server through the console.
 ![db1](https://user-images.githubusercontent.com/106439773/215357274-c7a46a7d-706f-492f-8deb-4be20355cd4a.png)
-5. Fill in tables.
+5. Fill in tables.\
+![db2](https://user-images.githubusercontent.com/106439773/215443620-0c3c2322-d09c-4beb-9348-d0a12c8140a5.png)
+![db3](https://user-images.githubusercontent.com/106439773/215443634-8ff47197-8790-43b3-9c90-691c766c0806.png)\
+Then I've added id columns into main table and connected to other tables with `ALTER TABLE professions ADD CONSTRAINT FK_professions_races FOREIGN KEY (id_race) REFERENCES races (id);`
+
 
 6. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY.
 
