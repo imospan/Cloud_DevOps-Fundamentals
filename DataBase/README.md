@@ -25,12 +25,31 @@ I've created a small sample DB with some Lineage2 professions, their RPG classes
 ![db3](https://user-images.githubusercontent.com/106439773/215443634-8ff47197-8790-43b3-9c90-691c766c0806.png)\
 Then I've added id columns into main table and connected to other tables with `ALTER TABLE professions ADD CONSTRAINT FK_professions_races FOREIGN KEY (id_race) REFERENCES races (id);`
 
-
 6. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY.
+![db4](https://user-images.githubusercontent.com/106439773/215456627-7a6eae29-76f8-4c9b-a763-e0e47286b962.png)
 
-7. Execute other different SQL queries DDL, DML, DCL.
-
+7. Execute other different SQL queries DDL, DML, DCL.\
+DDL and DML command could be seen on previous steps, DCL commands shown on the next screens.
 8. Create a database of new users with different privileges. Connect to the database as a new user and verify that the privileges allow or deny certain actions.
+![db5](https://user-images.githubusercontent.com/106439773/215456694-6d2c7f0a-b794-42e5-8f60-c6c539e81f72.png)
+![db6](https://user-images.githubusercontent.com/106439773/215456705-947dc91c-57bb-436c-aa53-5ea6382d0b04.png)
 
 9. Make a selection from the main table DB MySQL.
+![db7](https://user-images.githubusercontent.com/106439773/215456721-8a5c7e91-be16-4aa2-944a-cc195be90bce.png)
+
+Part 2
+--------------------
+10.Make backup of your database.
+
+11.Delete the table and/or part of the data in the table.
+
+12.Restore your database.
+
+13.Transfer your local database to RDS AWS.
+
+14.Connect to your database.
+
+15.Execute SELECT operator similar step 6.
+
+16.Create the dump of your database.
 
