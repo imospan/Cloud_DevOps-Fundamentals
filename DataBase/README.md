@@ -23,7 +23,7 @@ I've created a small sample DB with some Lineage2 professions, their RPG classes
 5. Fill in tables.\
 ![db2](https://user-images.githubusercontent.com/106439773/215443620-0c3c2322-d09c-4beb-9348-d0a12c8140a5.png)
 ![db3](https://user-images.githubusercontent.com/106439773/215443634-8ff47197-8790-43b3-9c90-691c766c0806.png)\
-Then I've added id columns into main table and connected to other tables with `ALTER TABLE professions ADD CONSTRAINT FK_professions_races FOREIGN KEY (id_race) REFERENCES races (id);`
+Then I've added id columns into main table and connected to other tables with\ `ALTER TABLE professions ADD CONSTRAINT FK_professions_races FOREIGN KEY (id_race) REFERENCES races (id);`
 
 6. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY.
 ![db4](https://user-images.githubusercontent.com/106439773/215456627-7a6eae29-76f8-4c9b-a763-e0e47286b962.png)
@@ -50,10 +50,13 @@ Part 2
 ![db11](https://user-images.githubusercontent.com/106439773/215462658-59fa51df-bfe4-4139-b826-a55ef41799e5.png)
 
 13.Transfer your local database to RDS AWS.
+![db12](https://user-images.githubusercontent.com/106439773/215476713-92459cdf-8d0a-4b01-924e-715089c66f82.png)
+I've created Amazon RDS via console and restored my DB from dump with\
+```[mosya@localhost ~]$ mysql -h database-1.cbmjjuwmuqqv.us-east-1.rds.amazonaws.com -P 3306 -u admin -p lineage2<lineage2.sql```
 
-14.Connect to your database.
-
-15.Execute SELECT operator similar step 6.
+14.Connect to your database. & 15.Execute SELECT operator similar step 6.
+![db13](https://user-images.githubusercontent.com/106439773/215477017-4893083f-259c-4842-81eb-9329e5563e83.png)
 
 16.Create the dump of your database.
+![db14](https://user-images.githubusercontent.com/106439773/215477050-11550eef-da03-4aab-b703-8044a68e6b78.png)
 
