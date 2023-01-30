@@ -23,7 +23,8 @@ I've created a small sample DB with some Lineage2 professions, their RPG classes
 5. Fill in tables.\
 ![db2](https://user-images.githubusercontent.com/106439773/215443620-0c3c2322-d09c-4beb-9348-d0a12c8140a5.png)
 ![db3](https://user-images.githubusercontent.com/106439773/215443634-8ff47197-8790-43b3-9c90-691c766c0806.png)\
-Then I've added id columns into main table and connected to other tables with\ `ALTER TABLE professions ADD CONSTRAINT FK_professions_races FOREIGN KEY (id_race) REFERENCES races (id);`
+Then I've added id columns into main table and connected to other tables with\
+`ALTER TABLE professions ADD CONSTRAINT FK_professions_races FOREIGN KEY (id_race) REFERENCES races (id);`
 
 6. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY.
 ![db4](https://user-images.githubusercontent.com/106439773/215456627-7a6eae29-76f8-4c9b-a763-e0e47286b962.png)
