@@ -61,3 +61,17 @@ I've created Amazon RDS via console and restored my DB from dump with\
 16.Create the dump of your database.
 ![db14](https://user-images.githubusercontent.com/106439773/215477050-11550eef-da03-4aab-b703-8044a68e6b78.png)
 
+Part 3. MongoDB
+-------------
+This part was done on an EC2 instance, because my CPU does not support some libs for latest Mongo versions.
+
+17. Create a database. Use the use command to connect to a new database (If it doesn't exist, Mongo will create it when you write to it). 
+18. Create a collection. Use db.createCollection to create a collection. I'll leave the subject up to you. Run show dbs and show collections to view your database and collections.\
+![m1](https://user-images.githubusercontent.com/106439773/215713587-c5422581-eea3-4a95-b288-0d82da77792a.png)
+
+19. Create some documents. Insert a couple of documents into your collection.
+![m2](https://user-images.githubusercontent.com/106439773/215713699-b4dafad5-c564-4f91-adc3-32bd0dd03ab2.png)
+
+20. Use find() to list documents out.\
+![m3](https://user-images.githubusercontent.com/106439773/215713793-bc7fd6dc-6a16-4ad6-b551-18841ba7fbaa.png)
+
