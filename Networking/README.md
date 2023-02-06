@@ -72,19 +72,19 @@ Supernet Subnet Mask: 255.255.240.0 (/20 prefix)
 Added new route rule with `sudo ip route add 172.17.32.0/20 via 10.6.88.1`
 _____________________
 6. Establish SSH connection 
-Install and start SSH server on Server VM:
-`sudo apt install openssh-server`
-`sudo systemctl start ssh`
-On Client1 and Client2:
+Install and start SSH server on Server VM:\
+`sudo apt install openssh-server`\
+`sudo systemctl start ssh`\
+On Client1 and Client2:\
 `ssh-keygen`\
 `ssh-copy-id -i ~/.ssh/id_rsa.pub mosya@192.168.0.200`\
 `ssh mosya0@192.168.0.200`\
-1
+1\
 2
 
 ____________________________
-7. Server firewall configuration 
-Disabling SSH connection from Client2: 
+7. Server firewall configuration\
+Disabling SSH connection from Client2:\
 On server: `sudo iptables -A INPUT -i enp0s9 -p tcp --dport 22 -j DROP`\
 1
 Disabling ping for 172.17.43.1:\
@@ -92,6 +92,6 @@ On Client1: `sudo iptables -A INPUT -p icmp --icmp-type 8 -d 172.17.42.1 -j REJE
 2
 ______________________________________
 8. NAT configuration.\
-On Server: `sudo iptables -t nat -A POSTROUTING -j MASQUERADE`
+On Server: `sudo iptables -t nat -A POSTROUTING -j MASQUERADE`\
 ping before-after
 
