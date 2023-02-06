@@ -44,4 +44,18 @@ From Client2:\
 ![Знімок екрана_20230206_173315](https://user-images.githubusercontent.com/106439773/217015233-81c6fd0b-bb1c-436f-bbbf-b7471ee5e6e1.png)
 ___________________________
 4. Add two IP to lo on Client1 and configure particular roles.
-
+On a Client1:
+```
+sudo ip addr add 172.17.33.1/24 dev lo label lo:10
+sudo ip addr add 172.17.43.1/24 dev lo label lo:20
+```
+On a Client2: ```sudo ip route add 172.17.43.0/24 via 172.16.23.1```\
+On a Server: ```sudo ip route add 172.17.33.0/24 via 10.88.23.11```\
+Result:\
+`[mosya@localhost ~]$ traceroute 172.17.43.1`\
+`traceroute to 172.17.43.1 (172.17.43.1), 30 hops max, 60 byte packets`\
+` 1  172.17.43.1 (172.17.43.1)  0.678 ms  0.566 ms  0.615 ms`
+`[mosya@localhost ~]$ traceroute 172.17.33.1`\
+` 1   10.6.88.1  0.232ms  0.232ms  0.273ms`\
+` 2   172.17.32.1  0.405ms  0.432ms  0.506ms`\
+________________________________________
