@@ -1,6 +1,7 @@
 Task AWS
 ===========
-I've successfully completed [AWS Cloud Practitioner Essentials](https://training.epam.ua/Training/Details/3509) training and I am waiting for a scheduled examination `(I'll update the README with the badge after the exam)`. 
+
+I've successfully completed [AWS Cloud Practitioner Essentials](https://training.epam.ua/Training/Details/3509) training and I've got [AWS Cloud Practitioner certification](https://www.credly.com/badges/0353baf1-20a6-40f2-9f5b-f254d6f03982/public_url).\
 I also have experience working with various AWS services via console, AWS CLI and IaC (some examples can be found [here](https://github.com/imospan/devops_basecamp/tree/main/task5_ansible) and [here](https://github.com/imospan/devops_basecamp/tree/main/task6_terraform)).
 Therefore, I don't consider it necessary to fill the repository with a bunch of screenshots and will just leave the main task here:
 
