@@ -20,3 +20,12 @@ Server's netplan and ip show:\
 Client1 netplan:\
 
 Client2 enp0s8 static:\
+
+2. Configure DHCP
+At first, install DHCP server with ```sudo apt install isc-dhcp-server```
+Added config in `/etc/dhcp/dhcpd.conf`:
+
+Restart service to apply changes: ```sudo systemctl restart isc-dhcp-server```
+Enable ip forwarding with ```sudo sysctl -w net.ipv4.ip_forward=1```
+
+3. Check connection between VMs with ping and traceroute commands:
