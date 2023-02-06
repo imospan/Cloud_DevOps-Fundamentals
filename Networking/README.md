@@ -43,7 +43,7 @@ From Client1:\
 From Client2:\
 ![Знімок екрана_20230206_173315](https://user-images.githubusercontent.com/106439773/217015233-81c6fd0b-bb1c-436f-bbbf-b7471ee5e6e1.png)
 ___________________________
-4. Add two IP to lo on Client1 and configure particular roles.
+4. Add two IP addresses on the virtual interface lo on Client1 and configure routes.
 On a Client1:
 ```
 sudo ip addr add 172.17.33.1/24 dev lo label lo:10
@@ -51,11 +51,47 @@ sudo ip addr add 172.17.43.1/24 dev lo label lo:20
 ```
 On a Client2: ```sudo ip route add 172.17.43.0/24 via 172.16.23.1```\
 On a Server: ```sudo ip route add 172.17.33.0/24 via 10.88.23.11```\
-Result:\
-`[mosya@localhost ~]$ traceroute 172.17.43.1`\
-`traceroute to 172.17.43.1 (172.17.43.1), 30 hops max, 60 byte packets`\
-` 1  172.17.43.1 (172.17.43.1)  0.678 ms  0.566 ms  0.615 ms`
-`[mosya@localhost ~]$ traceroute 172.17.33.1`\
-` 1   10.6.88.1  0.232ms  0.232ms  0.273ms`\
-` 2   172.17.32.1  0.405ms  0.432ms  0.506ms`\
+Result:
+```
+[mosya@localhost ~]$ traceroute 172.17.43.1
+traceroute to 172.17.43.1 (172.17.43.1), 30 hops max, 60 byte packets
+ 1  172.17.43.1 (172.17.43.1)  0.678 ms  0.566 ms  0.615 ms
+[mosya@localhost ~]$ traceroute 172.17.33.1
+ 1   10.6.88.1  0.232ms  0.232ms  0.273ms
+ 2   172.17.32.1  0.405ms  0.432ms  0.506ms
+ ```
+ 
 ________________________________________
+5. Summarizing
+172.17.33.0 = 10101100.00010001.0010 0001.00000000
+172.17.43.0 = 10101100.00010001.0010 1011.00000000
+Matching Network Bits = 20
+Supernet IP: 172.17.32.0
+Supernet Subnet Mask: 255.255.240.0 (/20 prefix)
+
+Added new route rule with `sudo ip route add 172.17.32.0/20 via 10.6.88.1`
+_____________________
+6. Establish SSH connection 
+Install and start SSH server on Server VM:
+`sudo apt install openssh-server`
+`sudo systemctl start ssh`
+On Client1 and Client2:
+`ssh-keygen`
+`ssh-copy-id -i ~/.ssh/id_rsa.pub mosya@192.168.0.200`
+`ssh mosya0@192.168.0.200`
+1
+2
+
+____________________________
+7. Server firewall configuration 
+Disabling SSH connection from Client2: 
+On server: `sudo iptables -A INPUT -i enp0s9 -p tcp --dport 22 -j DROP`
+1
+Disabling ping for 172.17.43.1:
+On Client1: `sudo iptables -A INPUT -p icmp --icmp-type 8 -d 172.17.42.1 -j REJECT`
+2
+______________________________________
+8. NAT configuration.
+On Server: `sudo iptables -t nat -A POSTROUTING -j MASQUERADE`
+ping before-after
+
