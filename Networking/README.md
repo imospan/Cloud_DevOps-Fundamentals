@@ -79,17 +79,22 @@ On Client1 and Client2:\
 `ssh-keygen`\
 `ssh-copy-id -i ~/.ssh/id_rsa.pub mosya@192.168.0.200`\
 `ssh mosya0@192.168.0.200`\
-1\
-2
+![Знімок екрана_20230206_200613](https://user-images.githubusercontent.com/106439773/217187038-ff481f2a-8f2d-4a78-b2fe-562e299eb1c7.png)
+![Знімок екрана_20230206_200600](https://user-images.githubusercontent.com/106439773/217187077-991f23a4-8738-48e8-9044-28f4ea5e987a.png)
+
 
 ____________________________
 7. Server firewall configuration\
 Disabling SSH connection from Client2:\
 On server: `sudo iptables -A INPUT -i enp0s9 -p tcp --dport 22 -j DROP`\
-1
+As we can see on a screen, connection from Client2 in no longer vaild:\
+![Знімок екрана_20230206_201649](https://user-images.githubusercontent.com/106439773/217187156-591e0cf3-fb4e-41cf-b304-80ac6ee6e07c.png)
+
 Disabling ping for 172.17.43.1:\
 On Client1: `sudo iptables -A INPUT -p icmp --icmp-type 8 -d 172.17.42.1 -j REJECT`\
-2
+Before and after rule implementation:\
+![Знімок екрана_20230206_201958](https://user-images.githubusercontent.com/106439773/217187198-40c9444b-643c-45a1-8fbc-543eb5000e3b.png)
+
 ______________________________________
 8. NAT configuration.\
 On Server: `sudo iptables -t nat -A POSTROUTING -j MASQUERADE`\
