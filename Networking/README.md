@@ -97,6 +97,9 @@ Before and after rule implementation:\
 
 ______________________________________
 8. NAT configuration.\
-On Server: `sudo iptables -t nat -A POSTROUTING -j MASQUERADE`\
-ping before-after
+To configure NAT masquerading on a server I've used command: `sudo iptables -t nat -A POSTROUTING -j MASQUERADE`\
+Screens before/after rule implementation on both clients:\
+![Знімок екрана_20230207_101600](https://user-images.githubusercontent.com/106439773/217190005-28874373-a73b-42fc-a924-99bc013d1eeb.png)
+![Знімок екрана_20230207_101630](https://user-images.githubusercontent.com/106439773/217190019-d14f5875-629a-4d57-ab86-7c22e40df387.png)
+
 
